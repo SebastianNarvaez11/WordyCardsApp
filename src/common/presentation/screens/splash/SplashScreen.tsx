@@ -3,6 +3,7 @@ import {FC, useState} from 'react';
 import {ActivityIndicator, View} from 'react-native';
 import Animated, {FadeIn, FadeInUp, FadeOut} from 'react-native-reanimated';
 
+import {WcWhiteIcon} from '../../components/icons';
 import {RootStackParams} from '../../navigation';
 import {useThemeStore} from '../../store/useThemeStore';
 import {styles} from './styles';
@@ -23,7 +24,7 @@ export const SplashScreen: FC<Props> = ({}) => {
 
       <View style={styles.containerLoader}>
         <Animated.View entering={FadeInUp.duration(1000)} exiting={FadeOut}>
-          {/* <LogoSbs size={200} /> */}
+          <WcWhiteIcon size={150} />
         </Animated.View>
 
         {isLoading && (

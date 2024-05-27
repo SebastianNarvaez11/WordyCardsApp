@@ -18,7 +18,7 @@ const Stack = createStackNavigator<RootStackParams>();
 
 export const RootStackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="SplashScreen">
+    <Stack.Navigator initialRouteName="LoginScreen">
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}

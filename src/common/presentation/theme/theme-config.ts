@@ -32,8 +32,8 @@ export interface ThemeColors {
 
 export const lightColors: ThemeColors = {
   primary: '#6461DB',
-  primary900: '#5A57C5',
-  primary100: '#B1B1EC',
+  primary900: '#5A60B9',
+  primary100: '#868ACB',
   secondary: '#6461DB',
   success: '#7aae30',
   success100: 'rgba(121, 174, 48, 0.16)',
@@ -43,7 +43,7 @@ export const lightColors: ThemeColors = {
   danger100: '#e71d3616',
   info: '#10CDEE',
   info100: '#10CDEE16',
-  text: '#1e1e1e',
+  text: '#181734 ',
   dark: '#22223b',
   backgroundPrimary: '#ffffff',
   backgroundSecondary: '#f7f7f7',
@@ -92,8 +92,8 @@ export const darkColors: ThemeColors = {
 
 export const globalStyles = StyleSheet.create({
   input: {
-    height: 30,
-    borderRadius: 5,
+    height: 45,
+    borderRadius: 10,
     justifyContent: 'center',
     paddingHorizontal: 10,
     fontSize: 14,
