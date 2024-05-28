@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import {Text} from '.';
-import {useThemeStore} from '../../store/useThemeStore';
+import {useThemeStore} from '../../store';
 
 interface Props extends PressableProps {
   children?: React.ReactNode;

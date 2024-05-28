@@ -5,7 +5,7 @@ import {Platform, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import IconIo from 'react-native-vector-icons/Ionicons';
 
-import {useThemeStore} from '../../store/useThemeStore';
+import {useThemeStore} from '../../store';
 import {Text} from '../ui';
 
 interface Props {

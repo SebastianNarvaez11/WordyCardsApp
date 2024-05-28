@@ -7,7 +7,7 @@ import {
   ViewProps,
 } from 'react-native';
 
-import {useThemeStore} from '../../store/useThemeStore';
+import {useThemeStore} from '../../store';
 import {ScreenLayout} from './ScreenLayout';
 
 interface Props extends ViewProps {

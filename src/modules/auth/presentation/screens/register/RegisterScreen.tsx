@@ -6,11 +6,11 @@ import {ScreenScrollLayout} from '../../../../../common/presentation/components/
 import {Text} from '../../../../../common/presentation/components/ui';
 import {useAnimation} from '../../../../../common/presentation/hooks';
 import {RootStackParams} from '../../../../../common/presentation/navigation';
-import {useThemeStore} from '../../../../../common/presentation/store/useThemeStore';
+import {useThemeStore} from '../../../../../common/presentation/store';
 import {RegisterForm, RegisterHeader} from '../../components';
 import {styles} from './styles';
 
-interface Props extends StackScreenProps<RootStackParams, 'LoginScreen'> {}
+interface Props extends StackScreenProps<RootStackParams, 'RegisterScreen'> {}
 
 export const RegisterScreen: FC<Props> = ({}) => {
   const {colors} = useThemeStore();

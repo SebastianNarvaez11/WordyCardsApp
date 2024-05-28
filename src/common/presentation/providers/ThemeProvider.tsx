@@ -1,7 +1,7 @@
 import React, {PropsWithChildren, useEffect} from 'react';
 import {useColorScheme} from 'react-native';
 
-import {useThemeStore} from '../store/useThemeStore';
+import {useThemeStore} from '../store';
 
 export const ThemeProvider = ({children}: PropsWithChildren) => {
   const {setTheme, isSystemTheme} = useThemeStore();

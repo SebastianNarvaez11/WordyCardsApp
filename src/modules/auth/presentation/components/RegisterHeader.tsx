@@ -5,7 +5,7 @@ import IconIo from 'react-native-vector-icons/Ionicons';
 
 import {WcWhiteIcon} from '../../../../common/presentation/components/icons';
 import {RootStackParams} from '../../../../common/presentation/navigation';
-import {useThemeStore} from '../../../../common/presentation/store/useThemeStore';
+import {useThemeStore} from '../../../../common/presentation/store';
 
 export const RegisterHeader = () => {
   const {colors} = useThemeStore();

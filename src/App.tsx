@@ -13,8 +13,8 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import React from 'react';
 
 import {RootStackNavigator} from './common/presentation/navigation';
-import {ThemeProvider} from './common/presentation/providers';
-import {useThemeStore} from './common/presentation/store/useThemeStore';
+import {AuthProvider, ThemeProvider} from './common/presentation/providers';
+import {useThemeStore} from './common/presentation/store';
 
 const queryClient = new QueryClient();
 
@@ -25,11 +25,11 @@ function App(): React.JSX.Element {
     <QueryClientProvider client={queryClient}>
       <NavigationContainer
         theme={currentTheme === 'light' ? DefaultTheme : DarkTheme}>
-        {/* <AuthProvider> */}
-        <ThemeProvider>
-          <RootStackNavigator />
-        </ThemeProvider>
-        {/* </AuthProvider> */}
+        <AuthProvider>
+          <ThemeProvider>
+            <RootStackNavigator />
+          </ThemeProvider>
+        </AuthProvider>
       </NavigationContainer>
     </QueryClientProvider>
   );

@@ -9,10 +9,10 @@ export const registerUserUseCase = async (request: IRegisterFormFields) => {
 
     return data;
   } catch (error) {
-    console.log('Error crear el usuario, inténtelo nuevo mas tarde:', error);
+    console.log(error);
     throw new Error(
       isAxiosError(error)
-        ? error.message
+        ? error.response?.data.message
         : 'Error crear el usuario, inténtelo nuevo mas tarde',
     );
   }

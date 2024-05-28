@@ -2,7 +2,7 @@ import {FC, ReactNode} from 'react';
 import {Platform, StyleSheet, View, ViewProps} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-import {useThemeStore} from '../../store/useThemeStore';
+import {useThemeStore} from '../../store';
 import {TopNavbarScreen} from './TopNavbarScreen';
 
 interface Props extends ViewProps {

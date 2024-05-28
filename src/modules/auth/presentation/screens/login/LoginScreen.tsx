@@ -6,7 +6,7 @@ import {ScreenScrollLayout} from '../../../../../common/presentation/components/
 import {Text} from '../../../../../common/presentation/components/ui';
 import {useAnimation} from '../../../../../common/presentation/hooks';
 import {RootStackParams} from '../../../../../common/presentation/navigation';
-import {useThemeStore} from '../../../../../common/presentation/store/useThemeStore';
+import {useThemeStore} from '../../../../../common/presentation/store';
 import {LoginForm, LoginHeader} from '../../components';
 import {styles} from './styles';
 

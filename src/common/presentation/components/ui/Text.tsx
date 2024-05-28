@@ -2,7 +2,7 @@ import React from 'react';
 import {DimensionValue, TextProps} from 'react-native';
 import {Text as RNText} from 'react-native-ui-lib';
 
-import {useThemeStore} from '../../store/useThemeStore';
+import {useThemeStore} from '../../store';
 import {Font} from '../../theme';
 
 interface CustomTextProps extends TextProps {

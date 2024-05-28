@@ -3,7 +3,7 @@ import {type Control, Controller} from 'react-hook-form';
 import {TextInputProps, TextStyle, View, ViewStyle} from 'react-native';
 import {TextField as UITextField} from 'react-native-ui-lib';
 
-import {useThemeStore} from '../../store/useThemeStore';
+import {useThemeStore} from '../../store';
 import {globalStyles} from '../../theme';
 import {Text} from '../ui';
 
