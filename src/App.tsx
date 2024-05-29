@@ -11,6 +11,7 @@ import {
 } from '@react-navigation/native';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import React from 'react';
+import CodePush from 'react-native-code-push';
 
 import {RootStackNavigator} from './common/presentation/navigation';
 import {AuthProvider, ThemeProvider} from './common/presentation/providers';
@@ -35,4 +36,4 @@ function App(): React.JSX.Element {
   );
 }
 
-export default App;
+export default CodePush(App);

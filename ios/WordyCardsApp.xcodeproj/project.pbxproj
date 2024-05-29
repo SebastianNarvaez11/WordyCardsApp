@@ -13,13 +13,13 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1CDE108B8DBC18D9171F6A72 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 240DCB15E579EB66E5DA3D21 /* PrivacyInfo.xcprivacy */; };
-		7699B88040F8A987B510C191 /* libPods-WordyCardsApp-WordyCardsAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WordyCardsApp-WordyCardsAppTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		E4EB324C6638483FB8A6056A /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3104E57F45914512961B0BA2 /* Quicksand-Bold.ttf */; };
-		A4CB2CD2824A40CB8D4A603D /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4975D76A90408AA12CA1B4 /* Quicksand-Light.ttf */; };
-		7DE9745F09BB4D49B7A0ADC2 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1628E3C0B64C8999FC3F62 /* Quicksand-Medium.ttf */; };
-		C797E77812A54526BB9B3716 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 892B38DA426A41F7BB65A7B3 /* Quicksand-Regular.ttf */; };
 		621B222AD96543E7AFBD6644 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B031C6A0C1104217A26F811B /* Quicksand-SemiBold.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-WordyCardsApp-WordyCardsAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WordyCardsApp-WordyCardsAppTests.a */; };
+		7DE9745F09BB4D49B7A0ADC2 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1628E3C0B64C8999FC3F62 /* Quicksand-Medium.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A4CB2CD2824A40CB8D4A603D /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4975D76A90408AA12CA1B4 /* Quicksand-Light.ttf */; };
+		C797E77812A54526BB9B3716 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 892B38DA426A41F7BB65A7B3 /* Quicksand-Regular.ttf */; };
+		E4EB324C6638483FB8A6056A /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3104E57F45914512961B0BA2 /* Quicksand-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,7 @@
 		00E356EE1AD99517003FC87E /* WordyCardsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordyCardsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* WordyCardsAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordyCardsAppTests.m; sourceTree = "<group>"; };
+		0F1628E3C0B64C8999FC3F62 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Quicksand-Medium.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-Medium.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* WordyCardsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordyCardsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = WordyCardsApp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = WordyCardsApp/AppDelegate.mm; sourceTree = "<group>"; };
@@ -44,12 +45,15 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WordyCardsApp/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = WordyCardsApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-WordyCardsApp-WordyCardsAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordyCardsApp-WordyCardsAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F4975D76A90408AA12CA1B4 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Quicksand-Light.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		240DCB15E579EB66E5DA3D21 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = WordyCardsApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3104E57F45914512961B0BA2 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Quicksand-Bold.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-WordyCardsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordyCardsApp.debug.xcconfig"; path = "Target Support Files/Pods-WordyCardsApp/Pods-WordyCardsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-WordyCardsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordyCardsApp.release.xcconfig"; path = "Target Support Files/Pods-WordyCardsApp/Pods-WordyCardsApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-WordyCardsApp-WordyCardsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordyCardsApp-WordyCardsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WordyCardsApp-WordyCardsAppTests/Pods-WordyCardsApp-WordyCardsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-WordyCardsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordyCardsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WordyCardsApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		892B38DA426A41F7BB65A7B3 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Quicksand-Regular.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-WordyCardsApp-WordyCardsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordyCardsApp-WordyCardsAppTests.release.xcconfig"; path = "Target Support Files/Pods-WordyCardsApp-WordyCardsAppTests/Pods-WordyCardsApp-WordyCardsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E8D4C222C0391AC00A0A7D7 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		9E8D4C232C0391AC00A0A7D7 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
@@ -70,12 +74,8 @@
 		9E8D4C322C0391AD00A0A7D7 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome6_Regular.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome6_Regular.ttf"; sourceTree = "<group>"; };
 		9E8D4C332C0391AD00A0A7D7 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		9E8D4C342C0391AD00A0A7D7 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome6_Solid.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome6_Solid.ttf"; sourceTree = "<group>"; };
+		B031C6A0C1104217A26F811B /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Quicksand-SemiBold.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		3104E57F45914512961B0BA2 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; name = "Quicksand-Bold.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1F4975D76A90408AA12CA1B4 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; name = "Quicksand-Light.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0F1628E3C0B64C8999FC3F62 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; name = "Quicksand-Medium.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		892B38DA426A41F7BB65A7B3 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; name = "Quicksand-Regular.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B031C6A0C1104217A26F811B /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; name = "Quicksand-SemiBold.ttf"; path = "../src/common/presentation/assets/fonts/Quicksand-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
