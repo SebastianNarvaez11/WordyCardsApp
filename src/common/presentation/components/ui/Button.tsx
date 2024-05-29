@@ -65,7 +65,7 @@ export const Button: FC<Props> = ({
             <Text
               align="center"
               text={label}
-              font={'Lato-Regular'}
+              font={'Quicksand-Medium'}
               size={labelSize}
               color={
                 labelColor ? labelColor : outline ? colors.text : colors.white

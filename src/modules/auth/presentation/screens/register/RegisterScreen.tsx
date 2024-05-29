@@ -41,7 +41,7 @@ export const RegisterScreen: FC<Props> = ({}) => {
               ],
             },
           ]}>
-          <Text size={35} font="Lato-Black" text="Regístrate" />
+          <Text size={35} font="Quicksand-Bold" text="Regístrate" />
 
           <RegisterForm />
         </Animated.View>

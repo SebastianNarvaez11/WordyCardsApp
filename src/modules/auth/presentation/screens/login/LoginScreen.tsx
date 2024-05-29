@@ -41,16 +41,21 @@ export const LoginScreen: FC<Props> = ({navigation}) => {
               ],
             },
           ]}>
-          <Text size={35} font="Lato-Black" text="Inicia sesión" />
+          <Text
+            size={35}
+            font="Quicksand-Bold"
+            text="Inicia sesión"
+            color={colors.text}
+          />
 
           <LoginForm />
 
-          <Text size={15} font="Lato-Regular" align="center">
+          <Text size={15} font="Quicksand-Regular" align="center">
             No tienes una cuenta?
             <Text
               onPress={() => navigation.navigate('RegisterScreen')}
               size={15}
-              font="Lato-Bold"
+              font="Quicksand-Bold"
               text=" Regístrate"
               color={colors.primary}
             />

@@ -36,7 +36,7 @@ export const TextField: FC<Props> = ({
       {label && (
         <Text
           text={label}
-          font={'Lato-Bold'}
+          font={'Quicksand-Bold'}
           size={14}
           style={[globalStyles.inputlabel, labelStyle]}
         />

@@ -1,7 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {create} from 'zustand';
-import {createJSONStorage, persist} from 'zustand/middleware';
 
+import {StorageAdapter} from '../../adapters';
 import {ThemeColors, darkColors, lightColors} from '../theme';
 
 export type ThemeType = 'light' | 'dark';
@@ -11,31 +10,33 @@ interface IThemeStore {
   isSystemTheme: boolean;
   colors: ThemeColors;
 
-  setTheme: (theme: ThemeType) => void;
+  setTheme: (theme: ThemeType) => Promise<void>;
   setIsSystemTheme: (status: boolean) => void;
 }
 
 export const useThemeStore = create<IThemeStore>()(
-  persist(
-    set => ({
-      currentTheme: 'light',
-      isSystemTheme: false,
-      colors: lightColors,
+  // persist(
+  set => ({
+    currentTheme: 'light',
+    isSystemTheme: false,
+    colors: lightColors,
 
-      setTheme: (theme: ThemeType) => {
-        set({
-          currentTheme: theme,
-          colors: theme === 'light' ? lightColors : darkColors,
-        });
-      },
+    setTheme: async (theme: ThemeType) => {
+      await StorageAdapter.setItem('THEME-WORDY-CARDS', theme);
 
-      setIsSystemTheme: (status: boolean) => {
-        set({isSystemTheme: status});
-      },
-    }),
-    {
-      name: 'theme-storage-wordy-cards',
-      storage: createJSONStorage(() => AsyncStorage),
+      set({
+        currentTheme: theme,
+        colors: theme === 'light' ? lightColors : darkColors,
+      });
     },
-  ),
+
+    setIsSystemTheme: (status: boolean) => {
+      set({isSystemTheme: status});
+    },
+  }),
+  //   {
+  //     name: 'THEME-WORDY-CARDS',
+  //     storage: createJSONStorage(() => AsyncStorage),
+  //   },
+  // ),
 );

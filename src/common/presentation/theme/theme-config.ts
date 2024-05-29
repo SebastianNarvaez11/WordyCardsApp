@@ -43,7 +43,7 @@ export const lightColors: ThemeColors = {
   danger100: '#e71d3616',
   info: '#10CDEE',
   info100: '#10CDEE16',
-  text: '#181734 ',
+  text: '#1E1D41',
   dark: '#22223b',
   backgroundPrimary: '#ffffff',
   backgroundSecondary: '#f7f7f7',

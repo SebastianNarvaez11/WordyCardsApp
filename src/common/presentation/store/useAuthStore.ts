@@ -47,8 +47,8 @@ export const useAuthStore = create<IAuthStore>()((set, get) => ({
   },
 
   logout: async () => {
-    await StorageAdapter.removeItem('access-token');
-    await StorageAdapter.removeItem('refresh-token');
+    await StorageAdapter.removeItem('ACCESS-TOKEN-WC');
+    await StorageAdapter.removeItem('REFRESH-TOKEN-WC');
 
     set({
       status: 'unauthenticated',

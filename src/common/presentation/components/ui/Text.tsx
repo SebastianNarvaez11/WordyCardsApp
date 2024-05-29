@@ -17,7 +17,7 @@ interface CustomTextProps extends TextProps {
 export const Text: React.FC<CustomTextProps> = ({
   children,
   text,
-  font = 'Lato-Regular',
+  font = 'Quicksand-Regular',
   size = 30,
   color,
   align = undefined,
@@ -28,11 +28,11 @@ export const Text: React.FC<CustomTextProps> = ({
   return (
     <RNText
       {...props}
+      color={color || colors.text}
       style={[
         {
           fontFamily: font,
           fontSize: size,
-          color: color ? color : colors.text,
           textAlign: align,
           width: width,
         },

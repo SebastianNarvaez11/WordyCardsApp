@@ -55,7 +55,7 @@ export const TopNavbarScreen: FC<Props> = ({
               width,
             },
           ]}>
-          <Text text={title} font="Lato-Bold" size={18} />
+          <Text text={title} font="Quicksand-Bold" size={18} />
         </View>
       )}
       {canGoBack ? (

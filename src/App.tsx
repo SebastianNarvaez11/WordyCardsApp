@@ -25,11 +25,11 @@ function App(): React.JSX.Element {
     <QueryClientProvider client={queryClient}>
       <NavigationContainer
         theme={currentTheme === 'light' ? DefaultTheme : DarkTheme}>
-        <AuthProvider>
-          <ThemeProvider>
+        <ThemeProvider>
+          <AuthProvider>
             <RootStackNavigator />
-          </ThemeProvider>
-        </AuthProvider>
+          </AuthProvider>
+        </ThemeProvider>
       </NavigationContainer>
     </QueryClientProvider>
   );
