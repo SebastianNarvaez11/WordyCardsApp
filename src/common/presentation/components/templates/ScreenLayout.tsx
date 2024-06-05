@@ -12,6 +12,7 @@ interface Props extends ViewProps {
   topBarRightActions?: ReactNode;
   customTopBar?: ReactNode;
   backgroundColor?: string;
+  noPadding?: boolean;
 }
 
 export const ScreenLayout: FC<Props> = ({
@@ -21,6 +22,7 @@ export const ScreenLayout: FC<Props> = ({
   topBarRightActions,
   customTopBar,
   backgroundColor,
+  noPadding = false,
   ...props
 }) => {
   const {top} = useSafeAreaInsets();
@@ -31,7 +33,7 @@ export const ScreenLayout: FC<Props> = ({
       style={[
         styles.container,
         {backgroundColor: backgroundColor || colors.backgroundSecondary},
-        title || canGoBack
+        title || canGoBack || noPadding
           ? styles.noPadding
           : {
               paddingTop: Platform.OS === 'android' ? top + 10 : top,

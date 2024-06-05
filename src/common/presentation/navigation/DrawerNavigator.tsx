@@ -1,6 +1,7 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import {SettingsScreen} from '../../../modules/setting/presentation/screens';
+import {CustomDrawer} from '../components/navigation';
 import {HomeScreen} from '../screens';
 
 export type DrawerParams = {
@@ -12,7 +13,14 @@ const Drawer = createDrawerNavigator<DrawerParams>();
 
 export const DrawerNavigator = () => {
   return (
-    <Drawer.Navigator initialRouteName="HomeScreen">
+    <Drawer.Navigator
+      initialRouteName="HomeScreen"
+      drawerContent={() => CustomDrawer()}
+      screenOptions={{
+        // drawerType: 'front',
+        // drawerPosition: 'right',
+        drawerContentContainerStyle: {justifyContent: 'space-between'},
+      }}>
       <Drawer.Screen
         name="HomeScreen"
         component={HomeScreen}

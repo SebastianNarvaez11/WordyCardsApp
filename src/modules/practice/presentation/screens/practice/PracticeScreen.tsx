@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import {StackScreenProps} from '@react-navigation/stack';
+import {useQueryClient} from '@tanstack/react-query';
+import React, {FC, useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {
   runOnJS,
@@ -7,31 +9,21 @@ import {
 } from 'react-native-reanimated';
 
 import {ScreenLayout} from '../../../../../common/presentation/components/templates';
-import {Button, Text} from '../../../../../common/presentation/components/ui';
-import {useThemeStore} from '../../../../../common/presentation/store';
+import {MainStackParams} from '../../../../../common/presentation/navigation';
+import {IRatingType} from '../../../infrastructure/interfaces';
 import {Card} from '../../components';
+import {useUpdateExercise} from '../../hooks';
 
-export const PracticeScreen = () => {
-  const {colors} = useThemeStore();
-  const wordsData = [
-    {
-      color: colors.green,
-    },
-    {
-      color: colors.danger,
-    },
-    {
-      color: colors.warning,
-    },
-    {
-      color: colors.primary,
-    },
-  ];
+interface Props extends StackScreenProps<MainStackParams, 'PracticeScreen'> {}
 
+export const PracticeScreen: FC<Props> = ({route, navigation}) => {
   const activeIndex = useSharedValue(0);
 
   const [indexCard, setIndexCard] = useState(0);
-  const [words, setWords] = useState(wordsData);
+  const [exercises, setExercises] = useState(route.params.exercises || []);
+
+  const queryClient = useQueryClient();
+  const {mutate} = useUpdateExercise();
 
   useAnimatedReaction(
     () => activeIndex.value,
@@ -42,39 +34,72 @@ export const PracticeScreen = () => {
     },
   );
 
-  useEffect(() => {
-    if (indexCard > words.length - 3) {
-      setWords(prevWords => [...prevWords, ...wordsData.reverse()]);
+  const onResponse = (
+    value: IRatingType,
+    id: string,
+    currentRating: number,
+  ) => {
+    if (value === 'easy') {
+      if (exercises.filter(item => item.id === id).length === 1) {
+        mutate({
+          exerciseId: id,
+          data: {rating: currentRating === 2 ? 2 : currentRating + 1},
+        });
+      }
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [indexCard]);
+    if (value === 'medium') {
+      if (exercises.filter(item => item.id === id).length === 1) {
+        mutate({
+          exerciseId: id,
+          data: {
+            rating: currentRating === 2 ? currentRating - 1 : currentRating,
+          },
+        });
+      }
+    }
 
-  const onResponse = (value: boolean) => {
-    console.log(value);
+    if (value === 'hard') {
+      if (exercises.filter(item => item.id === id).length === 1) {
+        setExercises([...exercises, exercises.find(item => item.id === id)!]);
+
+        mutate({
+          exerciseId: id,
+          data: {rating: 0},
+        });
+      }
+    }
+
+    if (indexCard === exercises.length - 1) {
+      navigation.goBack();
+    }
   };
+
+  useEffect(() => {
+    return () => {
+      queryClient.invalidateQueries({
+        queryKey: ['group_detail', route.params.groupId],
+      });
+      queryClient.invalidateQueries({queryKey: ['groups', 'infinite']});
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <ScreenLayout>
-      <Text text={'Tarjeta actual:' + indexCard} size={20} />
-
       <View style={styles.cardsContainer}>
-        {words.map((item, index) => (
+        {exercises.map((item, index) => (
           <Card
-            key={`${item.color} + ${index}`}
+            key={`${item.id} + ${index}`}
             {...item}
-            numberOfCards={words.length}
+            currentRating={item.rating}
+            numberOfCards={exercises.length}
             currentCardIndex={index}
             activeIndex={activeIndex}
             onResponse={onResponse}
           />
         ))}
       </View>
-
-      <Button
-        label="Si"
-        onPress={() => (activeIndex.value = activeIndex.value + 1)}
-      />
     </ScreenLayout>
   );
 };

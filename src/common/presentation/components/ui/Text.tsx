@@ -6,7 +6,7 @@ import {useThemeStore} from '../../store';
 import {Font} from '../../theme';
 
 interface CustomTextProps extends TextProps {
-  text?: string;
+  text?: string | number;
   font?: Font;
   size?: number;
   color?: string;
@@ -21,7 +21,7 @@ export const Text: React.FC<CustomTextProps> = ({
   size = 30,
   color,
   align = undefined,
-  width = '100%',
+  width,
   ...props
 }) => {
   const {colors} = useThemeStore();
@@ -34,7 +34,8 @@ export const Text: React.FC<CustomTextProps> = ({
           fontFamily: font,
           fontSize: size,
           textAlign: align,
-          width: width,
+          width: width || 'auto',
+          textAlignVertical: 'center',
         },
         props.style,
       ]}>

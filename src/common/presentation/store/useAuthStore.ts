@@ -37,8 +37,6 @@ export const useAuthStore = create<IAuthStore>()((set, get) => ({
   checkStatus: async () => {
     const {ok, user} = await AuthUseCases.checkStatus();
 
-    console.log(user);
-
     if (!ok) {
       return get().logout();
     }

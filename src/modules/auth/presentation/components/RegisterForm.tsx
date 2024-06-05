@@ -33,11 +33,11 @@ export const RegisterForm = () => {
   return (
     <View style={styles.formContainer}>
       <TextField
-        label="Nombre"
+        label="Usuario"
         control={control}
         error={errors.name?.message}
         name="name"
-        placeholder={'Tu nombre'}
+        placeholder={'Como quieres que te llamemos?'}
       />
 
       <TextField

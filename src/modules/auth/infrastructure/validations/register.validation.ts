@@ -7,7 +7,7 @@ export const RegisterValidationSchema: ZodType<IRegisterFormFields> = z
     name: z
       .string()
       .min(2, {message: 'El nombre es muy corto'})
-      .max(20, {message: 'El nombre es muy largo'}),
+      .max(15, {message: 'El nombre es muy largo'}),
     email: z
       .string()
       .email({message: 'El correo electrónico no es válido'})

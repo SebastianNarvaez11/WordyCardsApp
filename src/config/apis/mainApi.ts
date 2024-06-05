@@ -17,6 +17,8 @@ const mainApi = axios.create({
 mainApi.interceptors.request.use(async config => {
   const accessToken = await StorageAdapter.getItem('ACCESS-TOKEN-WC');
 
+  // console.log(accessToken);
+
   if (accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`;
   }

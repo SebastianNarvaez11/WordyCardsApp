@@ -4,6 +4,7 @@ export interface ThemeColors {
   primary: string;
   primary900: string;
   primary100: string;
+  primary200: string;
   secondary: string;
   success: string;
   success100: string;
@@ -28,12 +29,14 @@ export interface ThemeColors {
   skeleton1: string;
   skeleton2: string;
   skeleton3: string;
+  card: string;
 }
 
 export const lightColors: ThemeColors = {
   primary: '#6461DB',
   primary900: '#5A60B9',
   primary100: '#868ACB',
+  primary200: '#B1B0ED',
   secondary: '#6461DB',
   success: '#7aae30',
   success100: 'rgba(121, 174, 48, 0.16)',
@@ -51,19 +54,21 @@ export const lightColors: ThemeColors = {
   white: '#ffffff',
   black: '#1e1e1e',
   gray: '#858585',
-  gray50: '#E6E6E7',
+  gray50: '#E6E6E786',
   gray100: '#c2c2c2',
   green: '#0D6E30',
   selected: '#F8EFF4',
   skeleton1: '#ECECEC',
   skeleton2: '#F0F0F0',
   skeleton3: '#F1F1F1',
+  card: '#F0F2F8',
 };
 
 export const darkColors: ThemeColors = {
   primary: '#6461DB',
   primary900: '#5A57C5',
   primary100: '#B1B1EC33',
+  primary200: '#B1B1EC33',
   secondary: '#6461DB',
   success: '#7aae30',
   success100: 'rgba(121, 174, 48, 0.16)',
@@ -88,6 +93,7 @@ export const darkColors: ThemeColors = {
   skeleton1: '#171818',
   skeleton2: '#1f2022',
   skeleton3: '#1B1C1D',
+  card: '#1B1C1D',
 };
 
 export const globalStyles = StyleSheet.create({
