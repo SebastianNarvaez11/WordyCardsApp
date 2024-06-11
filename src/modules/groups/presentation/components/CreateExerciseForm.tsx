@@ -6,7 +6,7 @@ import {StyleSheet, View} from 'react-native';
 import {TextField} from '../../../../common/presentation/components/fields';
 import {Button} from '../../../../common/presentation/components/ui';
 import {useThemeStore} from '../../../../common/presentation/store';
-import {ExerciseUpdateValidationSchema} from '../../../auth/infrastructure/validations';
+import {ExerciseCreateValidationSchema} from '../../../auth/infrastructure/validations';
 import {ICreateExerciseFormFields} from '../../infrastructure/interfaces';
 
 interface Props {
@@ -22,7 +22,7 @@ export const CreateExerciseForm: FC<Props> = ({onAdd}) => {
     reset,
     formState: {errors},
   } = useForm<ICreateExerciseFormFields>({
-    resolver: zodResolver(ExerciseUpdateValidationSchema),
+    resolver: zodResolver(ExerciseCreateValidationSchema),
     defaultValues: {
       englishWord: '',
       spanishTranslation: '',
@@ -31,8 +31,8 @@ export const CreateExerciseForm: FC<Props> = ({onAdd}) => {
   });
 
   const onRegister = (values: ICreateExerciseFormFields) => {
-    reset();
     onAdd(values);
+    reset();
   };
 
   return (

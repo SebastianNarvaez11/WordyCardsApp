@@ -2,6 +2,7 @@ import axios from 'axios';
 import {Platform} from 'react-native';
 
 import {StorageAdapter} from '../../common/adapters';
+import {useAuthStore} from '../../common/presentation/store';
 import {IRefreshTokenResponse} from '../../modules/auth/infrastructure/interfaces';
 import {BASE_URL_ANDROID, BASE_URL_IOS} from '../constants';
 
@@ -16,8 +17,6 @@ const mainApi = axios.create({
 
 mainApi.interceptors.request.use(async config => {
   const accessToken = await StorageAdapter.getItem('ACCESS-TOKEN-WC');
-
-  // console.log(accessToken);
 
   if (accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`;
@@ -35,27 +34,26 @@ mainApi.interceptors.response.use(
   async error => {
     // respuesta fallida
     if (error.response.status === 401) {
-      if (error.response.data.error.name === 'TokenExpiredError') {
-        console.log('401:TokenExpiredError');
-        try {
-          const refreshToken = await StorageAdapter.getItem('REFRESH-TOKEN-WC');
+      console.log('401');
+      try {
+        const refreshToken = await StorageAdapter.getItem('REFRESH-TOKEN-WC');
 
-          const {data} = await axios.get<IRefreshTokenResponse>(
-            `${BASE_URL}/auth/refresh-token`,
-            {
-              headers: {
-                Authorization: `Bearer ${refreshToken}`,
-              },
+        const {data} = await axios.get<IRefreshTokenResponse>(
+          `${BASE_URL}/auth/refresh-token`,
+          {
+            headers: {
+              Authorization: `Bearer ${refreshToken}`,
             },
-          );
+          },
+        );
 
-          await StorageAdapter.setItem('ACCESS-TOKEN-WC', data.newAccessToken);
+        await StorageAdapter.setItem('ACCESS-TOKEN-WC', data.newAccessToken);
 
-          const originalRequest = error.config;
-          return mainApi.request(originalRequest);
-        } catch (e) {
-          return Promise.reject(e);
-        }
+        const originalRequest = error.config;
+        return mainApi.request(originalRequest);
+      } catch (e) {
+        useAuthStore.getState().logout();
+        return Promise.reject(e);
       }
     }
     return Promise.reject(error);

@@ -3,9 +3,12 @@ import {isAxiosError} from 'axios';
 import {GroupMapper} from '../../infrastructure/mappers';
 import {GroupRepository} from '../repositories';
 
-export const getGroupDetailUseCase = async (id: string) => {
+export const getGroupDetailUseCase = async (
+  id: string,
+  allExercises: boolean,
+) => {
   try {
-    const {data} = await GroupRepository.getGroupDetail(id);
+    const {data} = await GroupRepository.getGroupDetail(id, allExercises);
 
     return GroupMapper.fromGetGroupDetailResponseToGroupDetailModel(data);
   } catch (error) {

@@ -14,4 +14,8 @@ export class PracticeRepository {
       data,
     );
   }
+
+  static async deleteExercise(exerciseId: string) {
+    return await mainApi.delete(`/exercises/delete/${exerciseId}`);
+  }
 }

@@ -10,6 +10,7 @@ export interface IGroupDetailModel {
   id: string;
   name: string;
   iconName: string;
+  maxNumberOfExercisesPerRound: string;
   exercises: IExerciseModel[];
   countEasy: number;
   countMedium: number;

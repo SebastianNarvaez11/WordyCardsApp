@@ -306,7 +306,6 @@ export const Card: FC<Props> = ({
 const styles = StyleSheet.create({
   cardContainer: {
     flex: 1,
-    overflow: 'hidden',
     position: 'absolute',
     borderRadius: 20,
     width: cardWidth,
@@ -322,6 +321,8 @@ const styles = StyleSheet.create({
   },
   pressableCard: {
     flex: 1,
+    borderRadius: 20,
+    overflow: 'hidden',
     alignItems: 'center',
   },
   pressableCardNotImage: {

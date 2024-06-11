@@ -21,6 +21,8 @@ export class GroupMapper {
       id: response.group.id,
       name: response.group.name,
       iconName: response.group.iconName || 'home',
+      maxNumberOfExercisesPerRound:
+        response.group.maxNumberOfExercisesPerRound || '20',
       exercises: response.group.exercises,
       countEasy: response.countEasy || 0,
       countMedium: response.countMedium || 0,

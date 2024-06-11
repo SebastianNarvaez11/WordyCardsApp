@@ -5,12 +5,15 @@ import {Alert} from 'react-native';
 
 import {GroupUseCases} from '../../domain/use-cases';
 
-export const useGetServiceDetail = (groupId: string | null) => {
+export const useGetServiceDetail = (
+  groupId: string | null,
+  allExercises: boolean = false,
+) => {
   const {isLoading, data, error} = useQuery({
     queryKey: ['group_detail', groupId],
     staleTime: 1000 * 60 * 60, // 1 hour
     enabled: !!groupId,
-    queryFn: () => GroupUseCases.getGroupDetail(groupId || ''),
+    queryFn: () => GroupUseCases.getGroupDetail(groupId || '', allExercises),
   });
 
   useEffect(() => {

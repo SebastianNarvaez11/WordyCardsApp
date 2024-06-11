@@ -1,7 +1,8 @@
 import BottomSheet from '@gorhom/bottom-sheet';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {useQueryClient} from '@tanstack/react-query';
 import React, {FC, RefObject, useMemo} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Alert, StyleSheet, View} from 'react-native';
 import IconIo from 'react-native-vector-icons/Ionicons';
 
 import {
@@ -11,6 +12,7 @@ import {
 } from '../../../../common/presentation/components/ui';
 import {MainStackParams} from '../../../../common/presentation/navigation';
 import {useThemeStore} from '../../../../common/presentation/store';
+import {GroupUseCases} from '../../domain/use-cases';
 import {useGetServiceDetail} from '../hooks';
 import {GroupItemOption} from './GroupItemOption';
 import {GroupModalSkeleton} from './skeleton';
@@ -30,6 +32,7 @@ export const GroupModalSheet: FC<Props> = ({
   const {colors} = useThemeStore();
   const navigation = useNavigation<NavigationProp<MainStackParams>>();
   const groupSnapPoints = useMemo(() => ['70%'], []);
+  const queryClient = useQueryClient();
 
   const {data, isLoading} = useGetServiceDetail(groupId);
 
@@ -42,6 +45,29 @@ export const GroupModalSheet: FC<Props> = ({
       100,
     [data],
   );
+
+  const onDeleteGroup = (id: string) => {
+    if (!id) return;
+    Alert.alert(
+      '¿Estas seguro?',
+      'Si eliminas el grupo, esto eliminara también su progreso y todas sus palabras',
+      [
+        {
+          text: 'Si',
+          onPress: async () => {
+            bottomSheetRef.current?.close();
+            await GroupUseCases.deleteGroup(id);
+            queryClient.invalidateQueries({queryKey: ['groups', 'infinite']});
+          },
+        },
+        {
+          text: 'No',
+          onPress: () => {},
+          style: 'cancel',
+        },
+      ],
+    );
+  };
 
   return (
     <BottomSheetModal
@@ -87,20 +113,23 @@ export const GroupModalSheet: FC<Props> = ({
             </View>
           </View>
 
-          <View style={styles.containerProgressBar}>
-            <Text size={14} text="Tu progreso" font="Quicksand-SemiBold" />
-            <ProgressBar progress={progress} />
-            <Text
-              width={'100%'}
-              size={13}
-              font="Quicksand-SemiBold"
-              text={`${progress.toFixed(0)}%`}
-              style={{
-                marginLeft:
-                  progress >= 95 ? `${progress - 6}%` : `${progress}%`,
-              }}
-            />
-          </View>
+          {!isNaN(progress) && (
+            <View style={styles.containerProgressBar}>
+              <Text size={14} text="Tu progreso" font="Quicksand-SemiBold" />
+
+              <ProgressBar progress={progress ?? 0} />
+              <Text
+                width={'100%'}
+                size={13}
+                font="Quicksand-SemiBold"
+                text={`${progress.toFixed(0)}%`}
+                style={{
+                  marginLeft:
+                    progress >= 95 ? `${progress - 6}%` : `${progress}%`,
+                }}
+              />
+            </View>
+          )}
 
           <View style={styles.optionsContainer}>
             <GroupItemOption
@@ -122,13 +151,17 @@ export const GroupModalSheet: FC<Props> = ({
             <GroupItemOption
               iconColor={colors.warning}
               iconName="options"
-              onPress={() => {}}
               title="Modificar grupo"
+              onPress={() =>
+                navigation.navigate('GroupUpdateScreen', {
+                  group: data,
+                })
+              }
             />
             <GroupItemOption
               iconColor={colors.danger}
               iconName="trash"
-              onPress={() => {}}
+              onPress={() => onDeleteGroup(groupId || '')}
               title="Eliminar grupo"
             />
           </View>

@@ -51,7 +51,7 @@ export const TextField: FC<Props> = ({
         render={({field: {onChange, onBlur, value}}) => (
           <UITextField
             {...props}
-            placeholderTextColor={colors.gray100}
+            placeholderTextColor={colors.gray50}
             color={editable ? colors.text : colors.gray}
             onBlur={onBlur}
             onChangeText={onChange}
