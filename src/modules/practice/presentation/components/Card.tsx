@@ -108,5 +108,5 @@ const styles = StyleSheet.create({
     width: '100%',
     borderRadius: 10,
   },
-  textTranslation: {marginTop: 10},
+  textTranslation: {marginTop: 5},
 });
