@@ -8,14 +8,18 @@ import {
   GroupCreateScreen,
   GroupUpdateScreen,
 } from '../../../modules/groups/presentation/screens';
-import {PracticeScreen} from '../../../modules/practice/presentation/screens';
+import {
+  PracticeCardScreen,
+  PracticeWriteScreen,
+} from '../../../modules/practice/presentation/screens';
 import {ProfileScreen} from '../../../modules/profile/presentation/screens';
 import {DrawerNavigator} from './DrawerNavigator';
 
 export type MainStackParams = {
   DrawerNavigator: undefined;
   ProfileScreen: undefined;
-  PracticeScreen: {groupId: string; exercises: IExerciseModel[]};
+  PracticeCardScreen: {groupId: string; exercises: IExerciseModel[]};
+  PracticeWriteScreen: {groupId: string; exercises: IExerciseModel[]};
   GroupCreateScreen: undefined;
   GroupUpdateScreen: {group: IGroupDetailModel};
 };
@@ -36,8 +40,13 @@ export const MainStackNavigator = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="PracticeScreen"
-        component={PracticeScreen}
+        name="PracticeCardScreen"
+        component={PracticeCardScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PracticeWriteScreen"
+        component={PracticeWriteScreen}
         options={{headerShown: false}}
       />
       <Stack.Screen

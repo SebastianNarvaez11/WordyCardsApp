@@ -3377,6 +3377,7 @@ __metadata:
     react-native: 0.74.1
     react-native-circular-progress: ^1.4.0
     react-native-code-push: ^8.2.2
+    react-native-confetti-cannon: ^1.5.2
     react-native-dotenv: ^3.4.11
     react-native-fast-image: ^8.6.3
     react-native-gesture-handler: ^2.16.2
@@ -9549,6 +9550,13 @@ __metadata:
     semver: ^7.3.5
     xcode: 3.0.1
   checksum: 6d1263c65cd66ab04ffca1df718b89fe8f04c64a55acd4f654ec3ab178d16b81152e0e371e459b552a37d0aeb5703873fefa117677a564f334f433a1902a73e6
+  languageName: node
+  linkType: hard
+
+"react-native-confetti-cannon@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "react-native-confetti-cannon@npm:1.5.2"
+  checksum: 09026fd93304c0f3c3acfcf8dfc9b25003b30826031dffd81df6eea3b66dcee84f6ac4237719a84d3d71cb430f4fbf53d4c22b64ef17d439d5a3e5986c2ada83
   languageName: node
   linkType: hard
 

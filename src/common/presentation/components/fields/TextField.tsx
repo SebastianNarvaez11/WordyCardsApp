@@ -12,7 +12,7 @@ interface Props extends TextInputProps {
   labelStyle?: TextStyle;
   containerStyle?: ViewStyle;
 
-  control: Control<any>;
+  control?: Control<any>;
   error?: string | undefined;
   name: string;
   required?: boolean;
@@ -42,28 +42,41 @@ export const TextField: FC<Props> = ({
         />
       )}
 
-      <Controller
-        name={name}
-        control={control}
-        rules={{
-          required: required,
-        }}
-        render={({field: {onChange, onBlur, value}}) => (
-          <UITextField
-            {...props}
-            placeholderTextColor={colors.gray50}
-            color={editable ? colors.text : colors.gray}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            containerStyle={[
-              globalStyles.input,
-              {backgroundColor: colors.backgroundSecondary},
-              props.style,
-            ]}
-          />
-        )}
-      />
+      {control ? (
+        <Controller
+          name={name}
+          control={control}
+          rules={{
+            required: required,
+          }}
+          render={({field: {onChange, onBlur, value}}) => (
+            <UITextField
+              {...props}
+              placeholderTextColor={colors.gray50}
+              color={editable ? colors.text : colors.gray}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              containerStyle={[
+                globalStyles.input,
+                {backgroundColor: colors.backgroundSecondary},
+                props.style,
+              ]}
+            />
+          )}
+        />
+      ) : (
+        <UITextField
+          {...props}
+          placeholderTextColor={colors.gray50}
+          color={editable ? colors.text : colors.gray}
+          containerStyle={[
+            globalStyles.input,
+            {backgroundColor: colors.backgroundSecondary},
+            props.style,
+          ]}
+        />
+      )}
       {error && (
         <Text color={colors.danger} style={globalStyles.inputError} size={12}>
           {error}

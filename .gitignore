@@ -64,6 +64,7 @@ yarn-error.log
 
 ./env
 ./env.production
+./env.development
 
 # testing
 /coverage

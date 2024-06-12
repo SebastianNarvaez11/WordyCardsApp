@@ -136,12 +136,24 @@ export const GroupModalSheet: FC<Props> = ({
               iconColor={colors.success}
               iconName="rocket"
               onPress={() =>
-                navigation.navigate('PracticeScreen', {
+                navigation.navigate('PracticeCardScreen', {
                   groupId: groupId || '',
                   exercises: data.exercises,
                 })
               }
-              title="Practicar"
+              title="Practicar con cartas"
+            />
+
+            <GroupItemOption
+              iconColor={colors.primary}
+              iconName="rocket"
+              onPress={() =>
+                navigation.navigate('PracticeWriteScreen', {
+                  groupId: groupId || '',
+                  exercises: data.exercises,
+                })
+              }
+              title="Practicar escribiendo"
             />
 
             <View

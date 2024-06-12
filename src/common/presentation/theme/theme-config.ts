@@ -54,7 +54,7 @@ export const lightColors: ThemeColors = {
   white: '#ffffff',
   black: '#1e1e1e',
   gray: '#858585',
-  gray50: '#E6E6E786',
+  gray50: '#c2c2c2',
   gray100: '#c2c2c2',
   green: '#0D6E30',
   selected: '#F8EFF4',

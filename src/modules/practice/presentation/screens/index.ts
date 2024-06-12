@@ -1,1 +1,2 @@
-export * from './practice/PracticeScreen';
+export * from './practice/PracticeWriteScreen';
+export * from './practice/PracticeCardScreen';
